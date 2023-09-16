@@ -230,7 +230,7 @@ export const education = [
         date: "Apr 2016 - Apr 2018",
         grade: "75.4%",
         desc: "I completed my class 12 high school education at Chhotakhelna Surendra Smriti Vidyamandir , Medinipur, where I studied Science with PCM.",
-        degree: "WBBSE(XII), Science with PCM",
+        degree: "WBCHSE(XII), Science with PCM",
     },
     {
         id: 2,
@@ -239,7 +239,7 @@ export const education = [
         date: "Feb 2015 - Mar 2016",
         grade: "81.28%",
         desc: "I completed my class 10 education at Chhotakhelna Surendra Smriti Vidyamandir , Medinipur.",
-        degree: "ICSC(X), Science with Computer",
+        degree: "WBBSE(X), General Studies",
     },
 ];
 

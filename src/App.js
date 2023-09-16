@@ -7,6 +7,7 @@ import Skills from './Components/SkillSection';
 import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+
 const Body = styled.div`
 background-color:${({ theme }) => theme.bg};
 width:100%;
@@ -31,6 +32,7 @@ function App() {
           <Wrapper />
           <Skills />
           <Education />
+          
         </Body>
       </Router >
     </ThemeProvider>
