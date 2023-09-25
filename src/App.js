@@ -6,6 +6,8 @@ import Hero from './Components/HeroSection';
 import Skills from './Components/SkillSection';
 import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Footer from './Components/Footer';
+import Contact from './Components/Contact'
 
 
 const Body = styled.div`
@@ -32,7 +34,8 @@ function App() {
           <Wrapper />
           <Skills />
           <Education />
-          
+          <Contact />
+          <Footer />
         </Body>
       </Router >
     </ThemeProvider>
