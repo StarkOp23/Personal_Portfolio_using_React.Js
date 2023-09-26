@@ -59,13 +59,13 @@ export const skills = [
             {
                 name: "MySQL",
                 image:
-                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
+                    "https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg",
             },
 
             {
                 name: "MongoDB",
                 image:
-                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+                    "https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg",
             },
         ],
     },
