@@ -9,7 +9,7 @@ export const Bio = {
         "Traveller"
     ],
     description:
-        "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences. My expertise encompasses Oracle Digital Assistant (ODA), Oracle HCM, Large Language Models (LLMs), C2K (Conversation To knowledge) React.js, Node.js, MongoDB, Oracle Cloud, JavaScript, and REST APIs.",
+        "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences.",
     github: "https://github.com/StarkOp23",
     resume:
         "https://drive.google.com/file/d/1XEAvC51tb7p2_3qPi0IV4xlZ9VSbx7OJ/view?usp=sharing",
