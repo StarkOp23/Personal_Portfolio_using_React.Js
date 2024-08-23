@@ -2,13 +2,14 @@ export const Bio = {
     name: "SOUMYADEEP MAITI",
     roles: [
         "Full Stack Developer",
+        "ChatBot Developer",
         "FrontEnd Developer",
         "BackEnd Developer",
         "Photographer",
         "Traveller"
     ],
     description:
-        "I am a motivated and versatile individual, always eager to take on new challenges. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+        "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences. My expertise encompasses Oracle Digital Assistant (ODA), Oracle HCM, Large Language Models (LLMs), C2K (Conversation To knowledge) React.js, Node.js, MongoDB, Oracle Cloud, JavaScript, and REST APIs.",
     github: "https://github.com/StarkOp23",
     resume:
         "https://drive.google.com/file/d/1XEAvC51tb7p2_3qPi0IV4xlZ9VSbx7OJ/view?usp=sharing",
