@@ -1,7 +1,7 @@
 export const Bio = {
     name: "SOUMYADEEP MAITI",
     roles: [
-        "Full Stack Developer",
+        "FullStack Developer",
         "ChatBot Developer",
         "FrontEnd Developer",
         "BackEnd Developer",
@@ -12,10 +12,10 @@ export const Bio = {
         "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences.",
     github: "https://github.com/StarkOp23",
     resume:
-        "https://drive.google.com/file/d/1XEAvC51tb7p2_3qPi0IV4xlZ9VSbx7OJ/view?usp=sharing",
+        "https://drive.google.com/file/d/1NM2efWZXIihfu2E2yrt-TODZetWs7NnB/view?usp=drive_link",
     linkedin: "https://www.linkedin.com/in/soumyadeep-m-bb089a131/",
     twitter: "https://twitter.com/Soumyadeep_23",
-    insta: "https://www.instagram.com/stark___here/",
+    insta: "https://www.instagram.com/stark.cipher_/",
     facebook: "https://www.facebook.com/sanju.maiti.23",
 };
 
@@ -107,6 +107,29 @@ export const skills = [
 
         ],
     },
+    {
+        title: 'Cloud',
+        skills: [
+            {
+                name: "Oracle",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnOVjTWaheo4E99cgYZ6y14tpsgHlm0VN8Hw&s"
+            },
+            {
+                name: "Oracle HCM",
+                image: "https://banner2.cleanpng.com/20180615/zbe/aa7qpgkhq.webp"
+            },
+            {
+                name: "Oracle Gen Ai",
+                image: "https://i0.wp.com/techtrantor.com/wp-content/uploads/2024/01/image.png?fit=770%2C450&ssl=1"
+            },
+            {
+                name: "Oracle Digital Assistance",
+                image: "https://media.licdn.com/dms/image/v2/D4D12AQHeyPWD9wLckg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1677503578253?e=2147483647&v=beta&t=IpQSZBx06Je3XNKHw5na4tuzSFmMCcbUZddvrqc1cwo"
+            }
+
+
+        ]
+    }
 ];
 
 // export const experiences = [

@@ -110,7 +110,7 @@ function Footer() {
           <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2023 Soumyadeep Maiti. All rights reserved.
+          &copy; 2025 Soumyadeep Maiti. All rights reserved.
         </Copyright>
 
       </FooterWrapper>
