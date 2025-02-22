@@ -4,6 +4,7 @@ import { Bio } from '../../Data/constant'
 import Typewriter from 'typewriter-effect'
 import Soumyafb from '../../Images/Soumyafb.jpg'
 import HeroBgAnimation from '../HeroBgAnimation'
+import { useState } from 'react'
 
 const HeroContainer = styled.div`
   background-image: linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d);
@@ -96,8 +97,8 @@ export const HeroRightContainer = styled.div`
   }
 `;
 const Title = styled.div`
-  font-weight: 600;
   font-size: 40px;
+   font-family: "Black Ops One", serif;
   color: ${({ theme }) => theme.text_primary};
   line-height: 68px;
   @media (max-width: 960px) {
@@ -134,54 +135,88 @@ background: -webkit-linear-gradient(#116553, #33E9FF);
 -webkit-text-fill-color: transparent;
 `;
 
-const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
+// const SubTitle = styled.div`
+//   font-size: 20px;
+//   line-height: 32px;
+//   margin-bottom: 42px;
+//   color: ${({ theme }) => theme.text_primary + 95};
 
-  @media (max-width: 960px) {
-    text-align: center;
-  }
+//   @media (max-width: 960px) {
+//     text-align: center;
+//   }
 
-  @media (max-width: 640px) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-`;
-const ResumeButton = styled.a`
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    width: 30%;
-    max-width: 250px;
-    text-align: center;
-    padding: 16px 0;
-    color:${({ theme }) => theme.white};
-    border-radius: 25px;
+//   @media (max-width: 640px) {
+//     font-size: 16px;
+//     line-height: 32px;
+//   }
+// `;
+const StyledWrapper = styled.div`
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 22px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out !important;
-    background-image: linear-gradient(to right top, #333237, #3d3b4e, #444567, #485081, #485b9d, #4664ad, #406ebd, #3678ce, #3081d5, #2989dd, #2292e3, #199aea);
-    box-shadow:  20px 20px 100px linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d),
-    -20px -20px 60px #1F2634;
-    &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(10);
-    border-radius:2px
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
+    text-decoration: none;
+  }
 
-`;
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+
+  .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+    text-decoration: none;
+  }
+
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+
+  .cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+  }
+
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+
+  .cta:active {
+    transform: scale(0.95);
+  }
+  a{
+  text-decoration: none;
+  }  
+  
+  `;
+
+
 const Img = styled.img`
   position: relative;
   width: 100%;
@@ -200,42 +235,89 @@ const Img = styled.img`
   }
 `;
 
+const SubTitle = styled.div`
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 12px;
+  color: ${({ theme }) => theme.text_primary + 95};
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+`;
+
+const ReadMoreButton = styled.button`
+  background: none;
+  border: none;
+  color: #33E9FF;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  // margin-left: 5px;
+  &:hover {
+    color: #116553;
+  }
+`;
+
 
 
 
 const Hero = () => {
-    return (
-        <div id='about'>
-            <HeroContainer>
-                <HeroBg>
-                    <HeroBgAnimation />
-                </HeroBg>
-                <HeroInnerContainer>
-                    <HeroLeftContainer>
-                        <Title > Hey There! I Am <br /> {Bio.name}</Title>
-                        <TextLoop style={{ fontFamily: "'Caveat', cursive" }}  >I am a
-                            <Span  >
-                                <Typewriter
-                                    options={{
-                                        strings: Bio.roles,
-                                        autoStart: true,
-                                        loop: true,
-                                    }} 
-                                />
-                            </Span>
-                        </TextLoop>
-                        <SubTitle >{Bio.description}</SubTitle>
-                        <ResumeButton href={Bio.resume} target='display'  >Resume</ResumeButton>
-                    </HeroLeftContainer>
-                    <HeroRightContainer id="Right">
+  const [isExpanded, setIsExpanded] = useState(false);
+  const maxLength = 160; // Set max length for truncated text
 
-                        <Img src={Soumyafb} alt="hero-image" />
-                    </HeroRightContainer>
-                </HeroInnerContainer>
-            </HeroContainer>
+  return (
+    <div id='about'>
+      <HeroContainer>
+        <HeroBg>
+          <HeroBgAnimation />
+        </HeroBg>
+        <HeroInnerContainer>
+          <HeroLeftContainer>
+            <Title > Hola! I go by the name <br /> {Bio.name}</Title>
+            <TextLoop style={{ fontFamily: "'Caveat', cursive" }}  >I am a
+              <Span  >
+                <Typewriter
+                  options={{
+                    strings: Bio.roles,
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </Span>
+            </TextLoop>
+            {/* <SubTitle >{Bio.description}</SubTitle> */}
+            {/* Read More / Read Less Toggle */}
+            <SubTitle>
+              {isExpanded ? Bio.description : `${Bio.description.substring(0, maxLength)}...`}
+              <ReadMoreButton onClick={() => setIsExpanded(!isExpanded)}>
+                {isExpanded ? "Read Less" : "Read More"}
+              </ReadMoreButton>
+            </SubTitle>
+            {/* <ResumeButton href={Bio.resume} target='display'  >Resume</ResumeButton> */}
+            <StyledWrapper>
+              <button className="cta">
+                <a href={Bio.resume} target="_blank" rel="noopener noreferrer" ><span>Resume</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5" />
+                    <polyline points="8 1 12 5 8 9" />
+                  </svg></a>
+              </button>
+            </StyledWrapper>
 
-        </div>
-    )
+          </HeroLeftContainer>
+          <HeroRightContainer id="Right">
+
+            <Img src={Soumyafb} alt="hero-image" />
+          </HeroRightContainer>
+        </HeroInnerContainer>
+      </HeroContainer>
+
+    </div>
+  )
 }
 
 export default Hero
