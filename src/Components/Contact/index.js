@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Snackbar } from '@mui/material';
+import { Alert, Snackbar } from '@mui/material';
 
 const Container = styled.div`
 display: flex;
@@ -91,55 +91,132 @@ const ContactTitle = styled.div`
 const ContactInput = styled.input`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 1px;
+  // color: ${({ theme }) => theme.text_primary};
+  border-radius: 40px;
   padding: 12px 16px;
+  color: #979797;
+  border: 1px solid #353535;
+  box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+    rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    // border: 1px solid ${({ theme }) => theme.primary};
   }
 `
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  // border: 1px solid ${({ theme }) => theme.text_secondary};
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 1px;
+  // color: ${({ theme }) => theme.text_primary};
+  border-radius: 40px;
   padding: 12px 16px;
+  color: #979797;
+  border: 1px solid #353535;
+  box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+    rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    // border: 1px solid ${({ theme }) => theme.primary};
   }
-`
+`;
 
-const ContactButton = styled.input`
+const StyledWrapper = styled.div`
   width: 100%;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s ease-in-out !important;
-    background-image: linear-gradient(to right top, #333237, #3d3b4e, #444567, #485081, #485b9d, #4664ad, #406ebd, #3678ce, #3081d5, #2989dd, #2292e3, #199aea);
-    box-shadow:  20px 20px 100px linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d),
-    -20px -20px 60px #1F2634;
-    &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(10);
-    border-radius:2px
-    } 
-  padding: 13px 16px;
-  margin-top: 2px;
-  border-radius: 12px;
-  border: none;
-  color: ${({ theme }) => theme.text_primary};
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-`
+  display: flex;
+  justify-content: center;
+
+  .bt {
+    border: none;
+    user-select: none;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background-color: #0873bd;
+    border-radius: 12px;
+    height: 55px;
+    line-height: 55px;
+    width: 100%;
+    max-width: 535px;
+    transition: all 0.2s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    &:hover .msg {
+      animation: msgRun 2s forwards;
+    }
+
+    &:active {
+      transition: all 0.1s ease;
+      background-color: #5d9fcd;
+      transform: translateY(2px);
+    }
+  }
+
+  .msg {
+    height: 0;
+    width: 0;
+    border-radius: 2px;
+    position: absolute;
+    left: 15%;
+    top: 25%;
+  }
+
+  @keyframes msgRun {
+    0% {
+      border-top: #d6d6d9 0 solid;
+      border-bottom: #f2f2f5 0 solid;
+      border-left: #f2f2f5 0 solid;
+      border-right: #f2f2f5 0 solid;
+    }
+
+    20% {
+      border-top: #d6d6d9 14px solid;
+      border-bottom: #f2f2f5 14px solid;
+      border-left: #f2f2f5 20px solid;
+      border-right: #f2f2f5 20px solid;
+    }
+
+    25% {
+      border-top: #d6d6d9 12px solid;
+      border-bottom: #f2f2f5 12px solid;
+      border-left: #f2f2f5 18px solid;
+      border-right: #f2f2f5 18px solid;
+    }
+
+    80% {
+      border-top: transparent 12px solid;
+      border-bottom: transparent 12px solid;
+      border-left: transparent 18px solid;
+      border-right: transparent 18px solid;
+    }
+
+    100% {
+      transform: translateX(450px);
+      border-top: transparent 12px solid;
+      border-bottom: transparent 12px solid;
+      border-left: transparent 18px solid;
+      border-right: transparent 18px solid;
+    }
+  }
+`;
+
 
 
 
@@ -165,23 +242,34 @@ const Contact = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Get In Touch </Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <Title>Drop Me a Line </Title>
+        <Desc>Excited to hear from you—let’s make something great!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Type Your Message Here ...." rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
+          <ContactTitle>Reach Out—I'm Just an Email Away! 💻</ContactTitle>
+          <ContactInput placeholder="Your Email" name="from_email" required />
+          <ContactInput placeholder="Your Name" name="from_name" required />
+          <ContactInput placeholder="Subject" name="subject" required />
+          <ContactInputMessage placeholder="Type Your Message Here ...." rows="4" color='20' name="message" />
+          <StyledWrapper>
+            <button className="bt" id="bt">
+              <span className="msg" id="msg" />
+              Shoot It Over! 📩
+            </button>
+          </StyledWrapper>
         </ContactForm>
         <Snackbar
           open={open}
           autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          severity="Success :) "
-        />
+          onClose={() => setOpen(false)}>
+          <Alert
+            onClose={() => setOpen(false)}
+            severity="success"
+            variant="filled"
+            sx={{ width: '100%' }}
+          >
+            Mail Dispatched! 📤
+          </Alert>
+        </Snackbar>
       </Wrapper>
     </Container>
   )

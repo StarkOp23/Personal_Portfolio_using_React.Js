@@ -123,7 +123,7 @@ export const skills = [
                 image: "https://i0.wp.com/techtrantor.com/wp-content/uploads/2024/01/image.png?fit=770%2C450&ssl=1"
             },
             {
-                name: "Oracle Digital Assistance",
+                name: "Oracle Digital Assistant",
                 image: "https://media.licdn.com/dms/image/v2/D4D12AQHeyPWD9wLckg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1677503578253?e=2147483647&v=beta&t=IpQSZBx06Je3XNKHw5na4tuzSFmMCcbUZddvrqc1cwo"
             }
 
