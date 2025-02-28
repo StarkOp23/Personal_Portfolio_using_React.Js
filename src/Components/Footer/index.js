@@ -1,17 +1,91 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 // import FacebookIcon from '@mui/icons-material/Facebook';
 // import TwitterIcon from '@mui/icons-material/Twitter';
 // import LinkedInIcon from '@mui/icons-material/LinkedIn';
 // import InstagramIcon from '@mui/icons-material/Instagram';
 import { Bio } from '../../Data/constant';
+import space from '../../Images/space.jpg'
+
+// Twinkle effect
+const twinkle = keyframes`
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(1); }
+`;
+
+// Slow floating effect
+const moveStars = keyframes`
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); } 
+`;
+
+// Moon rotation
+// const rotateMoon = keyframes`
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// `;
 
 const FooterContainer = styled.div`
   width: 100%;
   padding: 2rem 0;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d);
+  position: relative;
+  overflow: hidden;
+  // background-image: linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d);
+  // background-image: url(https://img.freepik.com/free-photo/dark-blue-galaxy-space-with-stars-well-use-as-astronomy-backgrou_1258-106.jpg?t=st=1740717728~exp=1740721328~hmac=53400f6673f557db6034e5e64b60f5534c5ce5ad03738a76b4c1dbf0e67d67e8&w=1060);
+  background-size: cover;
+  // background-repeat: no-repeat
+  background-position-y: 35%;
+  background-image: url(${space});
 `;
+
+
+const StarsBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  div {
+    position: absolute;
+    background: radial-gradient(circle, white, rgba(255, 255, 255, 0.5));
+    border-radius: 50%;
+    animation: ${twinkle} 2s infinite alternate, ${moveStars} 6s infinite alternate;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+
+  ${Array.from({ length: 150 }).map(
+  (_, i) => ` 
+      div:nth-child(${i + 1}) {
+        top: ${Math.random() * 100}%;
+        left: ${Math.random() * 100}%;
+        animation-delay: ${Math.random() * 5}s;
+        width: ${Math.random() * 3 + 1}px;
+        height: ${Math.random() * 3 + 1}px;
+        box-shadow: 0 0 ${Math.random() * 10}px rgba(255, 255, 255, 0.9);
+      }
+    `
+)}
+`;
+
+
+// const Moon = styled.div`
+//   position: absolute;
+//   bottom: -20px;
+//   right: 12%;
+//   width: 200px; /* Increased size */
+//   height: 200px; /* Increased size */
+//   background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/240px-FullMoon2010.jpg");
+//   background-size: cover;
+//   border-radius: 90%;
+//   border: transparent;
+//   box-shadow: 0 0 30px rgba(200, 200, 200, 0.6);
+//   animation: ${rotateMoon} 20s linear infinite;
+// `;
 
 
 const FooterWrapper = styled.footer`
@@ -23,6 +97,8 @@ const FooterWrapper = styled.footer`
   align-items: center;
   padding: 1rem;
   color: ${({ theme }) => theme.text_primary};
+  position: relative;
+  z-index: 1;
 `;
 
 const Logo = styled.h1`
@@ -161,8 +237,14 @@ function Footer() {
   return (
     <FooterContainer>
 
+      <StarsBackground>
+        {Array.from({ length: 190 }).map((_, i) => (
+          <div key={i} />
+        ))}
+      </StarsBackground>
+      {/* <Moon /> Rotating moon */}
       <FooterWrapper>
-        <Logo style={{ fontFamily: "'Caveat', cursive" }}>SOUMYADEEP MAITI</Logo>
+        <Logo style={{ fontFamily: "'Nosifer', sans-serif" }}>SOUMYADEEP MAITI</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
@@ -170,12 +252,14 @@ function Footer() {
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
         </Nav>
+
         {/* <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
         </SocialMediaIcons> */}
+
         <StyledWrapper>
           <div className="social-buttons">
             <a href={Bio.github} className="social-button github" target="_blank" rel="noopener noreferrer">
@@ -216,8 +300,11 @@ function Footer() {
             </a>
           </div>
         </StyledWrapper>
-        <Copyright>
+        {/* <Copyright>
           &copy; 2025 Soumyadeep Maiti. All rights reserved.
+        </Copyright> */}
+        <Copyright>
+          &copy; {new Date().getFullYear()} Soumyadeep Maiti ,All rights reserved. Crafted with passion and dedication | Empowering ideas, building the future.
         </Copyright>
 
       </FooterWrapper>

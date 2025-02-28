@@ -1,5 +1,5 @@
 import './App.css';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { keyframes, ThemeProvider } from 'styled-components';
 import { darkTheme } from './Bio/theme';
 import Navbar from './Components/navbar';
 import Hero from './Components/HeroSection';
@@ -8,6 +8,80 @@ import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact'
+
+// Twinkling effect
+const twinkle = keyframes`
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(1); }
+`;
+
+// Shooting star animation
+const shootingStar = keyframes`
+  0% { transform: translate(-100vw, -50vh) rotate(45deg); opacity: 1; }
+  100% { transform: translate(100vw, 50vh) rotate(45deg); opacity: 0; }
+`;
+
+
+const StarsBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  div {
+    position: absolute;
+    background: radial-gradient(circle, white, rgba(255, 255, 255, 0.5));
+    border-radius: 50%;
+    animation: ${twinkle} 2s infinite alternate;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+
+  ${Array.from({ length: 200 }).map(
+  (_, i) => ` 
+      div:nth-child(${i + 1}) {
+        top: ${Math.random() * 100}%;
+        left: ${Math.random() * 100}%;
+        animation-delay: ${Math.random() * 5}s;
+        width: ${Math.random() * 3 + 1}px;
+        height: ${Math.random() * 3 + 1}px;
+        box-shadow: 0 0 ${Math.random() * 10}px rgba(255, 255, 255, 0.9);
+      }
+    `
+)}
+`;
+
+const ShootingStars = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  div {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(-45deg, white, rgba(255, 255, 255, 0));
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1));
+    animation: ${shootingStar} 7s linear infinite;
+  }
+
+  ${Array.from({ length: 10 }).map(
+  (_, i) => ` 
+      div:nth-child(${i + 1}) {
+        top: ${Math.random() * 100}vh;
+        left: ${Math.random() * 100}vw;
+        animation-delay: ${Math.random() * 9}s;
+      }
+    `
+)}
+`;
 
 
 const Body = styled.div`
@@ -30,6 +104,16 @@ function App() {
       <Router>
         <Navbar />
         <Body>
+          <StarsBackground>
+            {Array.from({ length: 350 }).map((_, i) => (
+              <div key={i} />
+            ))}
+          </StarsBackground>
+          <ShootingStars>
+            {Array.from({ length: 10 }).map((_, i) => (
+              <div key={i} />
+            ))}
+          </ShootingStars>
           <Hero />
           <Wrapper />
           <Skills />

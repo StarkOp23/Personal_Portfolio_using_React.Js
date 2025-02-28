@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Bio } from '../../Data/constant'
 import Typewriter from 'typewriter-effect'
-import Soumyafb from '../../Images/Soumyafb.jpg'
+// import Soumyafb from '../../Images/Soumyafb.jpg'
 import HeroBgAnimation from '../HeroBgAnimation'
 import { useState } from 'react'
 
@@ -311,7 +311,7 @@ const Hero = () => {
           </HeroLeftContainer>
           <HeroRightContainer id="Right">
 
-            <Img src={Soumyafb} alt="hero-image" />
+            <Img src={'https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif'} alt="hero-image" />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
