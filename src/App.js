@@ -8,6 +8,9 @@ import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact'
+import Experience from './Components/Experience';
+import ScrollToTop from 'react-scroll-to-top';
+// import ScrollToTop from "react-simple-scroll-up";
 
 // Twinkling effect
 const twinkle = keyframes`
@@ -117,9 +120,11 @@ function App() {
           <Hero />
           <Wrapper />
           <Skills />
+          <Experience />
           <Education />
           <Contact />
           <Footer />
+          <ScrollToTop size={70} bgColor='transparent' strokeFillColor='#33E9FF' />
         </Body>
       </Router >
     </ThemeProvider>

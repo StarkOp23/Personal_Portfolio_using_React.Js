@@ -1,6 +1,6 @@
 import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
-import _default from '../../themes/default';
+// import _default from '../../themes/default';
 
 export const Nav = styled.div`
 background-image: linear-gradient(to right top, #110224, #13042a, #140730, #160937, #180a3d);

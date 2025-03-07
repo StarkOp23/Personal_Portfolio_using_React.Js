@@ -1,11 +1,10 @@
 import React from 'react'
-import { Nav, NavLink, NavbarContainer,  NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu,MobileLink } from './NavbarStyledComponent'
+import { Nav, NavLink, NavbarContainer, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent'
 import { FaBars } from 'react-icons/fa';
-
+import './nav.css';
 import { useTheme } from 'styled-components';
 import { Bio } from '../../Data/constant';
-
-import logoNew from "./logoNew.png";
+import Phoenix from "./Phoenix.png";
 
 
 const Navbar = () => {
@@ -16,7 +15,7 @@ const Navbar = () => {
       <NavbarContainer>
         <NavLogo to='/'>
           <a href='*' style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-            <img src={logoNew} alt='no' width="150px"/>
+            <img src={Phoenix} alt='no' width="150px" height="150px" id='navimg' />
           </a>
         </NavLogo>
         <MobileIcon>
@@ -28,7 +27,7 @@ const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href='#skills'>Skills</NavLink>
           <NavLink href='#experience'>Experience</NavLink>
-          <NavLink href='#projects'>Projects</NavLink>
+          <NavLink href='https://github.com/StarkOp23?tab=repositories' target="_blank">Projects</NavLink>
           <NavLink href='#education'>Education</NavLink>
         </NavItems>
         <ButtonContainer>
@@ -40,7 +39,7 @@ const Navbar = () => {
             <MobileLink href="#about" onClick={() => {
               setIsOpen(!isOpen)
             }}>About</MobileLink>
-            
+
             <MobileLink href='#skills' onClick={() => {
               setIsOpen(!isOpen)
             }}>Skills</MobileLink>
@@ -50,7 +49,7 @@ const Navbar = () => {
             }}>Experience
             </MobileLink>
 
-            <MobileLink href='#projects' onClick={() => {
+            <MobileLink href='https://github.com/StarkOp23?tab=repositories' onClick={() => {
               setIsOpen(!isOpen)
             }}>Projects
             </MobileLink>
@@ -66,9 +65,9 @@ const Navbar = () => {
           </MobileMenu>
         }
       </NavbarContainer>
-       
+
     </Nav>
-    
+
   )
 }
 
