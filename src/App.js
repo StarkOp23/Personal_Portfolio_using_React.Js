@@ -8,9 +8,11 @@ import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact'
+import { ScrollToTop } from 'react-simple-scroll-up';
 import Experience from './Components/Experience';
-import ScrollToTop from 'react-scroll-to-top';
-// import ScrollToTop from "react-simple-scroll-up";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Loader from './Components/PreLoader/Loader';
 
 // Twinkling effect
 const twinkle = keyframes`
@@ -102,30 +104,49 @@ width: 100%;
 clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `
 function App() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating content loading
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Adjust time as needed
+  }, []);
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Router>
-        <Navbar />
-        <Body>
-          <StarsBackground>
-            {Array.from({ length: 350 }).map((_, i) => (
-              <div key={i} />
-            ))}
-          </StarsBackground>
-          <ShootingStars>
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} />
-            ))}
-          </ShootingStars>
-          <Hero />
-          <Wrapper />
-          <Skills />
-          <Experience />
-          <Education />
-          <Contact />
-          <Footer />
-          <ScrollToTop size={70} bgColor='transparent' strokeFillColor='#33E9FF' />
-        </Body>
+
+        {loading ? (
+          <Loader />
+
+        ) : (
+          <>
+
+            <Navbar />
+            <Body>
+              <StarsBackground>
+                {Array.from({ length: 350 }).map((_, i) => (
+                  <div key={i} />
+                ))}
+              </StarsBackground>
+              <ShootingStars>
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <div key={i} />
+                ))}
+              </ShootingStars>
+              <Hero />
+              <Wrapper />
+              <Skills />
+              <Experience />
+              <Education />
+              <Contact />
+              <Footer />
+              <ScrollToTop size={70} bgColor='transparent' strokeFillColor='#33E9FF' />
+            </Body>
+          </>
+        )}
       </Router >
     </ThemeProvider>
   );

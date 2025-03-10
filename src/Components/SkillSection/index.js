@@ -130,39 +130,24 @@ const SkillsContainer = styled.div`
   margin-top: 30px;
   gap: 20px;
   justify-content: center;
+  
 `
 
 const Skill = styled.div`
   width: 100%;
   max-width: 500px;
   // background: ${({ theme }) => theme.card};
-  box-shadow: rgba(23, 92, 200, 0.15) 0px 4px 40px;
   border-radius: 20px;
-  padding: 18px 36px;
+  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  position: relative;
+  padding: 10px 20px ;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
   cursor: pointer;
-  overflow: hidden;
-  &:hover{
-  border: 3px solid #0000;
-  border-radius: 12px;
-  background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
-        var(--angle),
-        #070707,
-        #687aff
-      ) border-box;
-  animation: 8s rotate linear infinite;
-}
+  transition: all .3s;
 
-@keyframes rotate {
-  to {
-    --angle: 360deg;
-  }
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-  }
+  &:hover {
+  transform: scale(0.9);
+  
   @media (max-width: 768px) {
     max-width: 400px;
     padding: 10px 36px;
@@ -171,6 +156,16 @@ const Skill = styled.div`
     max-width: 330px;
     padding: 10px 36px;
   }
+
+  @media (max-width: 768px) {
+    max-width: 400px;
+    padding: 10px 36px;
+  }
+  @media (max-width: 500px) {
+    max-width: 330px;
+    padding: 10px 36px;
+  }
+
 `
 const SkillTitle = styled.h2`
   font-size: 28px;
@@ -178,7 +173,6 @@ const SkillTitle = styled.h2`
   color: white;
   margin-bottom: 20px;
   text-align: center;
-  text-decoration: underline;
 `
 
 const SkillList = styled.div`
@@ -194,7 +188,7 @@ const SkillItem = styled.div`
   font-weight: 600;
   color: white;
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 8px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,6 +229,12 @@ const Skills = () => {
         <SkillsContainer>
           {skills.map((skill) => (
             <Skill>
+              <div className='line'></div>
+              <div className='line'></div>
+              <div className='line'></div>
+              <div className='line'></div>
+              <div className='line'></div>
+              <div className='line'></div>
               <SkillTitle style={{ fontFamily: "'Caveat', cursive" }}>{skill.title}</SkillTitle>
               <SkillList>
                 {skill.skills.map((item) => (

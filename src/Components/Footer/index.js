@@ -38,6 +38,15 @@ const FooterContainer = styled.div`
   // background-repeat: no-repeat
   background-position-y: 35%;
   background-image: url(${space});
+  @media (max-width: 768px) {
+    min-height: 200px; /* Adjust for smaller screens */
+    background-position: top; /* Reposition for better mobile view */
+  }
+
+  @media (max-width: 480px) {
+    min-height: 150px; /* Further adjustment for mobile */
+    background-position: bottom;
+  }
 `;
 
 
