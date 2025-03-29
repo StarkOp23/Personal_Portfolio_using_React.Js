@@ -84,19 +84,21 @@ export const GitHubButton = styled.a`
   border: 1.8px ;
   justify-content: center;
   display: flex;
+  gap: 6px !important;
   align-items: center;
-  height: 70%;
+  height: 80%;
   border-radius: 2px;
   color: ${({ theme }) => theme.primary};
   cursor: pointer;
   padding: 0 20px;
   font-weight: 500;
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.6s ease-in-out;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
     :hover {
       background-image: linear-gradient(to right top, #333237, #3d3b4e, #444567, #485081, #485b9d, #4664ad, #406ebd, #3678ce, #3081d5, #2989dd, #2292e3, #199aea);
-      color: ${({ theme }) => theme.white};     
+      color: ${({ theme }) => theme.white};  
+      border-radius:20px !important;   
     }
     @media screen and (max-width: 768px) { 
     font-size: 14px;
@@ -223,4 +225,3 @@ export const MobileNavLogo = styled(LinkR)`
     padding: 0 0px;
   }
 `;
-

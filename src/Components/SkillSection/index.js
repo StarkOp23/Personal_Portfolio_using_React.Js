@@ -1,6 +1,9 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { skills } from '../../Data/constant';
+import 'swiper/css/bundle';
+import { A11y, Autoplay, Navigation, Pagination, Parallax, Scrollbar, Zoom } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Twinkling effect
 const twinkle = keyframes`
@@ -136,17 +139,22 @@ const SkillsContainer = styled.div`
 const Skill = styled.div`
   width: 100%;
   max-width: 500px;
-  // background: ${({ theme }) => theme.card};
-  border-radius: 20px;
-  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
-  position: relative;
-  padding: 10px 20px ;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
-  cursor: pointer;
-  transition: all .3s;
+   border-radius: 0.5rem;
+  background: #606c88;
+  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
+  background: linear-gradient(to right top, #3f4c6b, #606c88);
+  padding: 1rem;
+  color: rgb(107, 114, 128);
+  box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
 
-  &:hover {
-  transform: scale(0.9);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // min-height: 250px;
+
+  // &:hover {
+  // transform: scale(0.9);
   
   @media (max-width: 768px) {
     max-width: 400px;
@@ -171,24 +179,25 @@ const SkillTitle = styled.h2`
   font-size: 28px;
   font-weight: 600;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: center;
 `
 
 const SkillList = styled.div`
   display: flex;
-  justify-content: center; 
+  justify-content: center !important;
+  align-items: center !important;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 10px;
 `
 
 const SkillItem = styled.div`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: white;
   border-radius: 12px;
-  padding: 8px 8px;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,25 +236,42 @@ const Skills = () => {
         <Desc>I am continuously honing my skills and expanding my expertise in various domains. Here are some of the key areas I am currently working on:
         </Desc>
         <SkillsContainer>
-          {skills.map((skill) => (
-            <Skill>
-              <div className='line'></div>
-              <div className='line'></div>
-              <div className='line'></div>
-              <div className='line'></div>
-              <div className='line'></div>
-              <div className='line'></div>
-              <SkillTitle style={{ fontFamily: "'Caveat', cursive" }}>{skill.title}</SkillTitle>
-              <SkillList>
-                {skill.skills.map((item) => (
-                  <SkillItem>
-                    <SkillImage src={item.image} />
-                    {item.name}
-                  </SkillItem>
-                ))}
-              </SkillList>
-            </Skill>
-          ))}
+
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y, Zoom, Parallax, Autoplay]}
+            spaceBetween={50}
+            breakpoints={{
+              320: { slidesPerView: 1.5, centeredSlides: true },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            zoom
+            parallax={true}
+            navigation
+            pagination={{ clickable: true }}
+          >
+
+            {skills.map((skill) => (
+              <SwiperSlide>
+                <Skill>
+                  <SkillTitle style={{ fontFamily: "'Caveat', cursive" }}>{skill.title}</SkillTitle>
+                  <SkillList>
+                    {skill.skills.map((item, i) => (
+                      <SkillItem key={i}>
+                        <SkillImage src={item.image} alt={item.name} />
+                        {item.name}
+                      </SkillItem>
+                    ))}
+                  </SkillList>
+                </Skill>
+              </SwiperSlide>
+            ))}
+
+          </Swiper>
 
         </SkillsContainer>
       </Wrapper>

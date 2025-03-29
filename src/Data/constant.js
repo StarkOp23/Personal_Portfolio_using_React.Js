@@ -12,7 +12,7 @@ export const Bio = {
         "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences. My expertise encompasses Oracle Digital Assistant (ODA), Oracle HCM, Large Language Models (LLMs), C2K (Conversation To knowledge) React.js, Node.js, MongoDB, Oracle Cloud, JavaScript, and REST APIs.",
     github: "https://github.com/StarkOp23",
     resume:
-        "https://drive.google.com/file/d/1NM2efWZXIihfu2E2yrt-TODZetWs7NnB/view?usp=drive_link",
+        "https://drive.google.com/file/d/1klPWe790-8ZBIVMn6Xeyj20HBPYD19Hd/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/soumyadeep-m-bb089a131/",
     twitter: "https://twitter.com/Soumyadeep_23",
     insta: "https://www.instagram.com/stark.cipher_/",
@@ -20,6 +20,41 @@ export const Bio = {
 };
 
 export const skills = [
+    {
+        title: 'Cloud',
+        skills: [
+            {
+                name: "AWS EC2",
+                image: "https://media.licdn.com/dms/image/v2/D4D12AQGAQDrCaTRzfg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698948083892?e=2147483647&v=beta&t=0GPPqSqGB0t-oLN3B3jUPvJGyGm_7Hv18Q9xEieV7zA"
+            },
+            {
+                name: "AWS IAM",
+                image: "https://i0.wp.com/foxutech.com/wp-content/uploads/2017/09/What-is-IAM-in-AWS-and-How-to-Create-user-in-IAM.png?fit=640%2C597&ssl=1"
+            },
+            {
+                name: "AWS S3",
+                image: "https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg"
+            },
+            {
+                name: "AWS AMI",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/AWS_Simple_Icons_Compute_Amazon_EC2_AMI.svg/1024px-AWS_Simple_Icons_Compute_Amazon_EC2_AMI.svg.png"
+            },
+            {
+                name: "AWS Load Balancer",
+                image: "https://www.ibm.com/content/dam/adobe-cms/instana/media_logo/AWS-ELB.png/_jcr_content/renditions/cq5dam.web.1280.1280.png"
+            },
+            {
+                name: "Oracle HCM",
+                image: "https://banner2.cleanpng.com/20180615/zbe/aa7qpgkhq.webp"
+            },
+            {
+                name: "Oracle Digital Assistant",
+                image: "https://media.licdn.com/dms/image/v2/D4D12AQHeyPWD9wLckg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1677503578253?e=2147483647&v=beta&t=IpQSZBx06Je3XNKHw5na4tuzSFmMCcbUZddvrqc1cwo"
+            }
+
+
+        ]
+    },
     {
         title: "Frontend",
         skills: [
@@ -107,29 +142,7 @@ export const skills = [
 
         ],
     },
-    {
-        title: 'Cloud',
-        skills: [
-            {
-                name: "Oracle",
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnOVjTWaheo4E99cgYZ6y14tpsgHlm0VN8Hw&s"
-            },
-            {
-                name: "Oracle HCM",
-                image: "https://banner2.cleanpng.com/20180615/zbe/aa7qpgkhq.webp"
-            },
-            {
-                name: "Oracle Gen Ai",
-                image: "https://i0.wp.com/techtrantor.com/wp-content/uploads/2024/01/image.png?fit=770%2C450&ssl=1"
-            },
-            {
-                name: "Oracle Digital Assistant",
-                image: "https://media.licdn.com/dms/image/v2/D4D12AQHeyPWD9wLckg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1677503578253?e=2147483647&v=beta&t=IpQSZBx06Je3XNKHw5na4tuzSFmMCcbUZddvrqc1cwo"
-            }
 
-
-        ]
-    }
 ];
 
 export const experiences = [

@@ -24,6 +24,7 @@
     "react-simple-scroll-up": "^0.2.3",
     "react-vertical-timeline-component": "^3.5.3",
     "styled-components": "^5.3.5",
+    "swiper": "^11.2.6",
     "typewriter-effect": "^2.20.1",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"
