@@ -12,7 +12,7 @@ export const Bio = {
         "As a passionate and dedicated software developer, I specialize in creating innovative solutions that bridge the gap between complex challenges and seamless user experiences. My expertise encompasses Oracle Digital Assistant (ODA), Oracle HCM, Large Language Models (LLMs), C2K (Conversation To knowledge) React.js, Node.js, MongoDB, Oracle Cloud, JavaScript, and REST APIs.",
     github: "https://github.com/StarkOp23",
     resume:
-        "https://drive.google.com/file/d/1klPWe790-8ZBIVMn6Xeyj20HBPYD19Hd/view?usp=sharing",
+        "https://drive.google.com/file/d/1q1XhbURZ97wE-cadcjOZL0x-rIlqTpjq/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/soumyadeep-m-bb089a131/",
     twitter: "https://twitter.com/Soumyadeep_23",
     insta: "https://www.instagram.com/stark.cipher_/",
