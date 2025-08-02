@@ -8,7 +8,6 @@ import Education from './Components/Education';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact'
-import { ScrollToTop } from 'react-simple-scroll-up';
 import Experience from './Components/Experience';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -143,7 +142,6 @@ function App() {
               <Education />
               <Contact />
               <Footer />
-              <ScrollToTop size={70} bgColor='transparent' strokeFillColor='#33E9FF' />
             </Body>
           </>
         )}
